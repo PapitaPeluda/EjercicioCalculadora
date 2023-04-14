@@ -2,7 +2,7 @@ package testfuncionalesTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import testfuncionales.Persona;
 
@@ -27,19 +27,22 @@ public class PersonaTest {
 		assertTrue(p.isMayorDeEdad());
 	}
 	
-	@Test public void test6() {
-		
+	@Test 
+	public void test6() {
 		Persona p = new Persona (100);
 		assertTrue(p.isMayorDeEdad());
 	}
 	
-	@Test public void test1() {
+	
+	@Test (expected= AssertionError.class)
+	public void test1() {
 		
 		Persona p = new Persona (-1);
 		p.isMayorDeEdad();
-	}
+	} 
 	
-	@Test public void test2() {
+	@Test (expected= AssertionError.class)
+	public void test2() {
 		
 		Persona p = new Persona (-100);
 		p.isMayorDeEdad();
